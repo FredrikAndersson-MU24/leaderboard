@@ -2,12 +2,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-color: black;
+  --header-bg-color: #f3afff;
+  --table-bg-color: rgb(245, 245, 245);
+  --table-row-hover-bg-color: rgb(240, 240, 240);
+}
+
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
+/* Wrapper for header, main and footer */
 .wrapper {
   min-width: 600px;
   max-width: 1200px;
@@ -17,15 +26,23 @@ body {
   padding: 1rem;
   margin: auto;
 }
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
   font-size: 2rem;
+  font-weight: lighter;
 }
 
 header {
   display: flex;
-  background-color: #f3afff;
+  background-color: var(--header-bg-color);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   padding-left: 2rem;
@@ -37,18 +54,20 @@ main {
   flex-direction: column;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: whitesmoke;
+  background-color: var(--table-bg-color);
 }
 
 footer {
+  font-family: var(--font-family);
   display: flex;
   justify-content: center;
   margin-top: auto;
   margin-bottom: 0.5rem;
 }
 
+/* Table header */
 .table-header {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: 0.9rem;
   width: 100%;
@@ -62,23 +81,22 @@ footer {
   padding-bottom: 1.4rem;
   margin-bottom: 0.8rem;
 }
-
 .table-header p {
   margin: 0.1rem;
   padding: 0.1rem;
 }
 
+/* Table rows */
 .table-entry {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family);
   font-size: 0.9rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-
 .table-entry:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--table-row-hover-bg-color);
   cursor: default;
 }
 .table-entry p {
@@ -88,8 +106,26 @@ footer {
   align-items: center;
 }
 
+/* Table fields - used in table header and table rows */
+.place,
+.avatar-column,
+.first-place-count,
+.second-place-count,
+.third-place-count,
+.points {
+  display: flex;
+  justify-content: center;
+}
+
+.name,
+.group {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .place {
-  width: 2rem;
+  width: 1.5rem;
+  flex-grow: 0.3;
 }
 
 .avatar-column {
@@ -103,46 +139,41 @@ footer {
 }
 
 .name {
-  min-width: 100px;
-  flex-grow: 1;
+  width: 6rem;
+  flex-grow: 0.8;
 }
 
 .group {
-  width: 120px;
-  flex-grow: 1;
+  width: 5rem;
+  flex-grow: 1.5;
 }
 
 .first-place-count,
 .second-place-count,
 .third-place-count {
   width: 2.5rem;
+  flex-grow: 0.1;
 }
 
 .points {
-  display: flex;
-  width: 4rem;
-  justify-content: center;
+  width: 2.5rem;
+  flex-grow: 0.3;
 }
 
-.place,
-.avatar-column,
-.first-place-count,
-.second-place-count,
-.third-place-count,
-.points {
-  display: flex;
-  justify-content: center;
-}
-.name,
-.group {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.place-count-img {
+.place-count-icon {
+  font-size: 1.4rem;
   max-height: 2.5rem;
   padding-left: 0px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
 }
+
+/* old */
+/* .place-count-img {
+  max-height: 2.5rem;
+  padding-left: 0px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+} */
