@@ -12,7 +12,6 @@
 
 body {
   width: 100vw;
-  height: 100vh;
   margin: 0;
 }
 
@@ -59,10 +58,12 @@ main {
 
 footer {
   font-family: var(--font-family);
+  font-size: 0.8rem;
   display: flex;
   justify-content: center;
   margin-top: auto;
   margin-bottom: 0.5rem;
+  bottom: 0;
 }
 
 .bottom {
