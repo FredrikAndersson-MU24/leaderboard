@@ -10,15 +10,21 @@
   --table-row-hover-bg-color: rgb(240, 240, 240);
 }
 
-body {
+html {
   width: 100vw;
+  height: 100%;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100%;
   margin: 0;
 }
 
 /* Wrapper for header, main and footer */
 .wrapper {
-  min-width: 600px;
-  max-width: 1200px;
+  min-width: 35rem;
+  max-width: 75rem;
   height: 100%;
   display: flex;
   flex-direction: column;
